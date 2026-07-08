@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Taylor Hammond, an A-Level Computer Science student showcasing projects, skills, and passion for technology.">
+    <title>Portfolio | Taylor Hammond</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated particle canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Taylor Hammond</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                A-Level CS, IT &amp; Business Student
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Hi, I'm</span>
+                <span class="title-name gradient-text">Taylor Hammond</span>
+            </h1>
+            <p class="hero-subtitle">
+                Passionate about building innovative solutions through code.
+                <br>Exploring the intersection of <span class="highlight-text">algorithms</span>, 
+                <span class="highlight-text">data analytics</span> &amp; <span class="highlight-text">business strategy</span>.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Languages</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="120">0</span>
+                    <span class="stat-label">Contributions</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="code-filename">taylor.py</span>
+                </div>
+                <div class="code-body">
+                    <pre><code id="typed-code"></code></pre>
+                    <span class="cursor-blink">|</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle">A glimpse into who I am and what drives me</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="about-icon card-cs">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3>Computer Science</h3>
+                    <p>Designing and building robust systems. Focuses on programming structures, algorithmic complexity, software development paradigms, and database principles.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon card-analytics">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <h3>IT &amp; Data Analytics</h3>
+                    <p>Extracting intelligence from data. Focuses on database design, querying (SQL), statistical trends, and translating raw data into business insights.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon card-business">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3>Business Studies</h3>
+                    <p>Aligning technology with operational success. Focuses on agile project management, financial forecasting, strategic decision-making, and organizational efficiency.</p>
+                </div>
+            </div>
+            <div class="about-timeline">
+                <div class="timeline-item cs-timeline">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Present</span>
+                        <h4>A-Level Computer Science</h4>
+                        <p>Studying Object-Oriented Programming (OOP), complex data structures, algorithmic design (Big-O), and systems architecture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item analytics-timeline">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Present</span>
+                        <h4>A-Level IT &amp; Data Analytics</h4>
+                        <p>Studying database structures, SQL query optimization, data normalization, security protocols, and business intelligence reporting.</p>
+                    </div>
+                </div>
+                <div class="timeline-item business-timeline">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Present</span>
+                        <h4>A-Level Business Studies</h4>
+                        <p>Analyzing financial forecasting, project workflows (Agile/Scrum), marketing paradigms, operational efficiency, and corporate strategy.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Previous</span>
+                        <h4>GCSE Computer Science</h4>
+                        <p>Built a strong foundation in programming, networking, and computer architecture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">The Beginning</span>
+                        <h4>Started Coding</h4>
+                        <p>Discovered a passion for programming and began exploring various languages and frameworks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                <p class="section-subtitle">Technologies and concepts I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card glass-card skill-cs" data-skill="python">
+                    <div class="skill-icon-wrap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                    </div>
+                    <h3>Python Programming</h3>
+                    <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-card glass-card skill-analytics" data-skill="sql">
+                    <div class="skill-icon-wrap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                    </div>
+                    <h3>SQL &amp; Database Design</h3>
+                    <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-card glass-card skill-analytics" data-skill="analytics">
+                    <div class="skill-icon-wrap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <h3>Data Analytics &amp; Viz</h3>
+                    <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                    <span class="skill-level">Intermediate / Advanced</span>
+                </div>
+                <div class="skill-card glass-card skill-cs" data-skill="web-dev">
+                    <div class="skill-icon-wrap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Web Development</h3>
+                    <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                    <span class="skill-level">Intermediate / Advanced</span>
+                </div>
+                <div class="skill-card glass-card skill-business" data-skill="business">
+                    <div class="skill-icon-wrap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h3>Business &amp; Project Mgmt</h3>
+                    <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-card glass-card skill-cs" data-skill="algorithms">
+                    <div class="skill-icon-wrap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="13" cy="12" r="3"/><line x1="6" y1="9" x2="10.5" y2="10.5"/><line x1="15.5" y1="13.5" x2="18" y2="15"/></svg>
+                    </div>
+                    <h3>Algorithms &amp; OOP</h3>
+                    <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                    <span class="skill-level">Advanced</span>
+                </div>
+            </div>
+            <div class="concepts-section">
+                <h3 class="concepts-title">Core Knowledge Areas</h3>
+                <div class="concepts-grid-container">
+                    <div class="concepts-group glass-card cs-group">
+                        <h4 class="group-title cs-title">Computer Science</h4>
+                        <div class="concepts-cloud">
+                            <span class="concept-tag tag-cs">OOP</span>
+                            <span class="concept-tag tag-cs">Data Structures</span>
+                            <span class="concept-tag tag-cs">Big O Notation</span>
+                            <span class="concept-tag tag-cs">Sorting Algorithms</span>
+                            <span class="concept-tag tag-cs">Boolean Algebra</span>
+                            <span class="concept-tag tag-cs">Recursion</span>
+                            <span class="concept-tag tag-cs">Encryption</span>
+                        </div>
+                    </div>
+                    <div class="concepts-group glass-card analytics-group">
+                        <h4 class="group-title analytics-title">IT &amp; Data Analytics</h4>
+                        <div class="concepts-cloud">
+                            <span class="concept-tag tag-analytics">Normalisation</span>
+                            <span class="concept-tag tag-analytics">Relational SQL</span>
+                            <span class="concept-tag tag-analytics">ETL Pipelines</span>
+                            <span class="concept-tag tag-analytics">Data Visualisation</span>
+                            <span class="concept-tag tag-analytics">Data Integrity</span>
+                            <span class="concept-tag tag-analytics">Predictive Modelling</span>
+                            <span class="concept-tag tag-analytics">Metadata Systems</span>
+                        </div>
+                    </div>
+                    <div class="concepts-group glass-card business-group">
+                        <h4 class="group-title business-title">Business &amp; Operations</h4>
+                        <div class="concepts-cloud">
+                            <span class="concept-tag tag-business">Agile / Scrum</span>
+                            <span class="concept-tag tag-business">Financial Planning</span>
+                            <span class="concept-tag tag-business">SWOT Analysis</span>
+                            <span class="concept-tag tag-business">Operations Strategy</span>
+                            <span class="concept-tag tag-business">Project Lifecycle</span>
+                            <span class="concept-tag tag-business">Marketing Mix</span>
+                            <span class="concept-tag tag-business">Risk Assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">A showcase of what I've built &mdash; check back soon for updates!</p>
+            </div>
+
+            <!-- PROJECT CARDS — Add your projects here! -->
+            <!-- Copy the template below and fill in your own details for each project. -->
+
+            <div class="projects-grid" id="projects-grid">
+
+                <!-- ============================================= -->
+                <!--  PROJECT TEMPLATE — Duplicate this block for   -->
+                <!--  each new project you want to add.             -->
+                <!-- ============================================= -->
+                <!--
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <img src="YOUR_IMAGE_PATH_HERE" alt="Project screenshot">
+                        <div class="project-overlay">
+                            <a href="YOUR_LIVE_LINK" class="project-link" target="_blank" rel="noopener">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="YOUR_GITHUB_LINK" class="project-link" target="_blank" rel="noopener">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your project and what it does.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <!-- ============================================= -->
+                <!--  END OF PROJECT TEMPLATE                       -->
+                <!-- ============================================= -->
+
+            </div>
+
+            <!-- Empty state — shown when no projects are added -->
+            <div class="projects-empty" id="projects-empty">
+                <div class="empty-state glass-card">
+                    <div class="empty-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                            <polyline points="13 2 13 9 20 9"/>
+                            <line x1="12" y1="18" x2="12" y2="12"/>
+                            <line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Projects Coming Soon</h3>
+                    <p>I'm currently working on some exciting projects. <br>Check back soon to see what I've been building!</p>
+                    <div class="empty-hint">
+                        <span class="hint-code">&lt;!-- Add projects using the template in index.html --&gt;</span>
+                    </div>
+                </div>
+                <!-- Placeholder skeleton cards to show where projects will go -->
+                <div class="placeholder-grid">
+                    <div class="placeholder-card glass-card">
+                        <div class="placeholder-image shimmer"></div>
+                        <div class="placeholder-content">
+                            <div class="placeholder-line wide shimmer"></div>
+                            <div class="placeholder-line medium shimmer"></div>
+                            <div class="placeholder-line narrow shimmer"></div>
+                            <div class="placeholder-tags">
+                                <div class="placeholder-tag shimmer"></div>
+                                <div class="placeholder-tag shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="placeholder-card glass-card">
+                        <div class="placeholder-image shimmer"></div>
+                        <div class="placeholder-content">
+                            <div class="placeholder-line wide shimmer"></div>
+                            <div class="placeholder-line medium shimmer"></div>
+                            <div class="placeholder-line narrow shimmer"></div>
+                            <div class="placeholder-tags">
+                                <div class="placeholder-tag shimmer"></div>
+                                <div class="placeholder-tag shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="placeholder-card glass-card">
+                        <div class="placeholder-image shimmer"></div>
+                        <div class="placeholder-content">
+                            <div class="placeholder-line wide shimmer"></div>
+                            <div class="placeholder-line medium shimmer"></div>
+                            <div class="placeholder-line narrow shimmer"></div>
+                            <div class="placeholder-tags">
+                                <div class="placeholder-tag shimmer"></div>
+                                <div class="placeholder-tag shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Interested in collaborating or want to chat? Drop me a message!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a>
+                        </div>
+                    </div>
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass-card" id="contact-form">
+                    <div class="form-group">
+                        <label for="form-name">Name</label>
+                        <input type="text" id="form-name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email">Email</label>
+                        <input type="email" id="form-email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message">Message</label>
+                        <textarea id="form-message" name="message" placeholder="Tell me about your idea..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="form-submit">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">dev</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <p class="footer-text">Designed &amp; built with <span class="heart">&hearts;</span> &mdash; &copy; <span id="footer-year"></span></p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
